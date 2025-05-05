@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaBtc, FaCcMastercard, FaPaypal } from "react-icons/fa";
 import { RiVisaLine } from "react-icons/ri";
-import Title from "./title";
+import Title from "./Title";
 import api from "../libs/apiCall";
 import { MdVerifiedUser } from "react-icons/md";
 import { IoGitCompareSharp } from "react-icons/io5";
