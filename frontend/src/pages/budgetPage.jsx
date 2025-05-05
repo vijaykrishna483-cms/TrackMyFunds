@@ -75,10 +75,10 @@ const BudgetPage = () => {
   }, []);
 
   return (
-    <div className="p-6 max-w-4xl mx-auto bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+    <div className="p-6 max-w-full sm:max-w-4xl mx-auto bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
       <h1 className="text-2xl font-bold mb-4">Budget Overview</h1>
 
-      <div className="grid grid-cols-3 font-semibold border-b pb-2 mb-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 font-semibold border-b pb-2 mb-2">
         <div>Description</div>
         <div>Limit (₹)</div>
         <div>Current (₹)</div>
@@ -87,7 +87,7 @@ const BudgetPage = () => {
       {data.map((budget, index) => (
         <div
           key={index}
-          className={`grid grid-cols-3 py-2 border-b text-sm ${
+          className={`grid grid-cols-1 sm:grid-cols-3 py-2 border-b text-sm ${
             budget.current > budget.goalamount ? 'text-red-600' : ''
           }`}
         >
@@ -106,7 +106,7 @@ const BudgetPage = () => {
 
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-md w-80 dark:bg-gray-700 dark:text-white">
+          <div className="bg-white p-6 rounded-lg shadow-md w-full sm:w-80 dark:bg-gray-700 dark:text-white">
             <h2 className="text-lg font-bold mb-4">Add New Budget</h2>
             <input
               type="text"
