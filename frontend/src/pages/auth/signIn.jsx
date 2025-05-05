@@ -125,7 +125,7 @@ className="text-sm border dark:border-gray-800 dark:bg-transparent dark:placehol
         </div>
 
         <CardFooter className="justify-center gap-2">
-          <p className="text-sm text-greay-600 ">Don't have an account?</p>
+          <p className="text-sm text-greay-600 dark:text-white">Don't have an account?</p>
         <Link to="/sign-up" className="text-sm text-violet-800 hover:underline ">
             Sign Up
         </Link>

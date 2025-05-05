@@ -138,7 +138,7 @@ const signup = () => {
         </div>
 
         <CardFooter className="justify-center gap-2">
-          <p className="text-sm text-greay-600 ">Already have an account?</p>
+          <p className="text-sm text-greay-600 dark:text-white">Already have an account?</p>
           <Link
             to="/sign-in"
             className="text-sm text-violet-800 hover:underline "
