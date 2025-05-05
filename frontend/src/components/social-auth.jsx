@@ -1,13 +1,13 @@
 import {
-    GithubAuthProvider,
     GoogleAuthProvider,
-    signInWithPopup,
+    signInWithRedirect,
   } from "firebase/auth";
-  
+
+
+
   import React, { useEffect, useState } from "react";
   import { useAuthState } from "react-firebase-hooks/auth";
   import { FcGoogle } from "react-icons/fc";
-  import { FaGithub} from "react-icons/fa";
 
   import { useNavigate } from "react-router-dom";
   import { toast } from "sonner";
@@ -26,10 +26,13 @@ import {
     const navigate = useNavigate();
   
     const signInWithGoogle = async () => {
-      const provider = new GoogleAuthProvider();
-      setSelectedProvider("google");
+      
+const provider = new GoogleAuthProvider();
+signInWithRedirect(auth, provider);
+
+  
       try {
-        await signInWithPopup(auth, provider);
+        await signInWithRedirect(auth, provider);
       } catch (error) {
         console.error("Error signing in with Google", error);
       }
@@ -46,7 +49,7 @@ import {
           };
   
           setLoading(true);
-          const { data: res } = await api.post("/auth/sign-up", userData);
+          const { data: res } = await api.post("/auth/sign-in", userData);
   
           if (res?.user) {
             toast.success(res?.message);
